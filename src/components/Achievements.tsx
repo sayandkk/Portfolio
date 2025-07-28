@@ -22,24 +22,7 @@ const Achievements: React.FC = () => {
       category: 'Research',
       color: 'from-blue-500 to-purple-500'
     },
-    {
-      id: 3,
-      title: 'Dean\'s List Recognition',
-      description: 'Consistently maintained high academic performance, earning recognition on the Dean\'s List for academic excellence.',
-      icon: Award,
-      date: '2022-2024',
-      category: 'Academic',
-      color: 'from-green-500 to-teal-500'
-    },
-    {
-      id: 4,
-      title: 'Open Source Contributor',
-      description: 'Active contributor to various open-source projects with over 50+ contributions and 100+ GitHub stars across repositories.',
-      icon: Star,
-      date: 'Ongoing',
-      category: 'Open Source',
-      color: 'from-purple-500 to-pink-500'
-    }
+
   ];
 
   const stats = [
@@ -149,7 +132,7 @@ const Achievements: React.FC = () => {
           <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Ready for New Challenges</h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Always eager to take on exciting projects and collaborate with innovative teams. 
+              Always eager to take on exciting projects and collaborate with innovative teams.
               Let's create something amazing together!
             </p>
             <motion.button
