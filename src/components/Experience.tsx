@@ -23,7 +23,7 @@ const Experience: React.FC = () => {
     },
     {
       id: 2,
-      title: 'Biomedical Research Intern',
+      title: 'Research Intern',
       company: 'Aster Medcity',
       location: 'Kochi, Kerala',
       period: 'February 2024 - March 2024',
@@ -34,7 +34,7 @@ const Experience: React.FC = () => {
         'Created data visualization tools for medical analysis',
         'Collaborated with medical professionals on research'
       ],
-      technologies: ['Python', 'Arduino', 'Signal Processing', 'Data Analysis', 'NumPy'],
+      technologies: ['Python', 'Arduino', 'Signal Processing', 'Data Analysis'],
       type: 'internship',
       current: false
     }
@@ -44,9 +44,9 @@ const Experience: React.FC = () => {
     {
       degree: 'Bachelor of Technology in Computer Science',
       institution: 'University of Calicut',
-      period: '2020 - 2024',
-      grade: 'CGPA: 8.5/10',
-      description: 'Specialized in software engineering, data structures, algorithms, and computer systems. Completed various projects in web development, mobile applications, and research.'
+      period: '2021 - 2025',
+      grade: 'CGPA: 7.02/10',
+      description: 'Specialized in software engineering, data structures, algorithms, and computer systems. Completed various projects in web development and research.'
     }
   ];
 
@@ -95,11 +95,10 @@ const Experience: React.FC = () => {
                     className="relative pl-12"
                   >
                     {/* Timeline dot */}
-                    <div className={`absolute left-2 w-4 h-4 rounded-full border-4 ${
-                      exp.current 
-                        ? 'bg-green-500 border-green-200 animate-pulse' 
-                        : 'bg-blue-600 border-blue-200'
-                    }`}></div>
+                    <div className={`absolute left-2 w-4 h-4 rounded-full border-4 ${exp.current
+                      ? 'bg-green-500 border-green-200 animate-pulse'
+                      : 'bg-blue-600 border-blue-200'
+                      }`}></div>
 
                     <motion.div
                       whileHover={{ scale: 1.02 }}

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTheme } from './contexts/ThemeContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,17 +13,13 @@ import Footer from './components/Footer';
 import ParticleBackground from './components/ParticleBackground';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const { isDarkMode, toggleTheme } = useTheme();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
 
   if (loading) {
     return (
@@ -37,29 +34,27 @@ function App() {
   }
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
-      <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-        <ParticleBackground />
-        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        
-        <AnimatePresence>
-          <motion.main
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Experience />
-            <Achievements />
-            <Contact />
-          </motion.main>
-        </AnimatePresence>
-        
-        <Footer />
-      </div>
+    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 min-h-screen">
+      <ParticleBackground />
+      <Header darkMode={isDarkMode} toggleDarkMode={toggleTheme} />
+      
+      <AnimatePresence>
+        <motion.main
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+          <Achievements />
+          <Contact />
+        </motion.main>
+      </AnimatePresence>
+      
+      <Footer />
     </div>
   );
 }

@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply transition-colors duration-300;
+  }
+  
+  * {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .section-bg {
+    @apply bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-gray-900/50 dark:to-purple-900/50;
+  }
+  
+  .card-bg {
+    @apply bg-white/10 dark:bg-gray-800/50 backdrop-blur-lg border border-white/20 dark:border-gray-700/50;
+  }
+  
+  .text-primary {
+    @apply text-gray-900 dark:text-white;
+  }
+  
+  .text-secondary {
+    @apply text-gray-600 dark:text-gray-300;
+  }
+  
+  .hover-scale {
+    @apply hover:scale-105 transition-transform duration-300;
+  }
+}

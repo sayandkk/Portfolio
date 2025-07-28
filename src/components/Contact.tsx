@@ -22,14 +22,14 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     setSubmitStatus('success');
     setIsSubmitting(false);
     setFormData({ name: '', email: '', subject: '', message: '' });
-    
+
     setTimeout(() => setSubmitStatus(null), 5000);
   };
 
@@ -49,8 +49,8 @@ const Contact: React.FC = () => {
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 XXXXX XXXXX',
-      href: 'tel:+91XXXXXXXXX'
+      value: '+91 8138950624',
+      href: 'tel:+918138950624'
     }
   ];
 
@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 mt-6 max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? I'd love to hear from you. 
+            Have a project in mind or want to collaborate? I'd love to hear from you.
             Let's discuss how we can work together to bring your ideas to life.
           </p>
         </motion.div>
@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
               <h3 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
                 Contact Information
               </h3>
-              
+
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <motion.div
@@ -154,11 +154,10 @@ const Contact: React.FC = () => {
                 <motion.div
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className={`flex items-center space-x-2 p-4 rounded-lg mb-6 ${
-                    submitStatus === 'success' 
-                      ? 'bg-green-500/20 text-green-600 dark:text-green-400' 
+                  className={`flex items-center space-x-2 p-4 rounded-lg mb-6 ${submitStatus === 'success'
+                      ? 'bg-green-500/20 text-green-600 dark:text-green-400'
                       : 'bg-red-500/20 text-red-600 dark:text-red-400'
-                  }`}
+                    }`}
                 >
                   {submitStatus === 'success' ? (
                     <CheckCircle size={20} />
@@ -166,8 +165,8 @@ const Contact: React.FC = () => {
                     <AlertCircle size={20} />
                   )}
                   <span>
-                    {submitStatus === 'success' 
-                      ? 'Message sent successfully!' 
+                    {submitStatus === 'success'
+                      ? 'Message sent successfully!'
                       : 'Failed to send message. Please try again.'}
                   </span>
                 </motion.div>
